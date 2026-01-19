@@ -10,7 +10,6 @@ public class KredytRequest {
 
    public KredytRequest(){}
 
-
   public BigDecimal getAmount(){
 
        return amount;
@@ -24,19 +23,23 @@ public class KredytRequest {
        return months;
   }
   public void setMonths(int months) {
+
        this.months = months;
   }
   public LocalDate getLoanDate(){
-    return loanDate;
+
+       return loanDate;
   }
   public void setLoanDate(LocalDate loanDate){
       this.loanDate = loanDate;
   }
   public BigDecimal getAnnualInterestRate(){
-      return annualInterestRate;
+
+       return annualInterestRate;
   }
   public void setAnnualInterestRate(BigDecimal annualInterestRate){
-      this.annualInterestRate = annualInterestRate;
+
+       this.annualInterestRate = annualInterestRate;
     }
 
 

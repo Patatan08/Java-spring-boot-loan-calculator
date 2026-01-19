@@ -1,4 +1,4 @@
 package com.example.kalkulatorfinansowy;
 
-public class KredytSerwis {
+public class KredytSerwis   {
 }
