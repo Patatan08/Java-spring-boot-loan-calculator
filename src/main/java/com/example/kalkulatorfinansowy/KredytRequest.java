@@ -1,22 +1,44 @@
 package com.example.kalkulatorfinansowy;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class KredytRequest {
-   private  BigDecimail amount;
-   private int Months
+   private  BigDecimal amount;
+   private int months;
+   private LocalDate loanDate;
+   private BigDecimal annualInterestRate;
 
-  private BigDecimal getAmount(){
-       return getAmount;
+   public KredytRequest(){}
+
+
+  public BigDecimal getAmount(){
+
+       return amount;
   }
-  private void setAmount(){
+  public void setAmount(BigDecimal amount ){
+
        this.amount = amount;
   }
-  private int getMonths(){
-       return getMonths;
+  public int getMonths(){
+
+       return months;
   }
-  private void setMonths() {
-       this.Months = months;
+  public void setMonths(int months) {
+       this.months = months;
   }
+  public LocalDate getLoanDate(){
+    return loanDate;
+  }
+  public void setLoanDate(LocalDate loanDate){
+      this.loanDate = loanDate;
+  }
+  public BigDecimal getAnnualInterestRate(){
+      return annualInterestRate;
+  }
+  public void setAnnualInterestRate(BigDecimal annualInterestRate){
+      this.annualInterestRate = annualInterestRate;
+    }
+
 
 
 
