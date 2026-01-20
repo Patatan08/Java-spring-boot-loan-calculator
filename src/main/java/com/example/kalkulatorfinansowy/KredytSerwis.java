@@ -7,6 +7,9 @@ import java.math.BigDecimal;
 public class KredytSerwis {
 
     public BigDecimal obliczRate(BigDecimal sum, BigDecimal LoanInterest, int months) {
+        if(sum == null || LoanInterest == null || months <= 0){
+            throw new RuntimeException("Podane dane są błędne");
+        }
         BigDecimal years = new BigDecimal(months).divide(new BigDecimal(12), 10, BigDecimal.ROUND_HALF_UP);
 
         BigDecimal interest = sum
@@ -14,7 +17,7 @@ public class KredytSerwis {
                 .divide(new BigDecimal(100), 10, BigDecimal.ROUND_HALF_UP)
                 .multiply(years);
 
-        BigDecimal total = total.add(interest);
+        BigDecimal total = sum.add(interest);
 
         BigDecimal installment = total.divide(new BigDecimal(months), 2, BigDecimal.ROUND_HALF_UP);
 
