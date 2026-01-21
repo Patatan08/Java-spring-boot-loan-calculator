@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class KredytController {
+    @Autowired
+    private KredytSerwis kredytSerwis;
     @PostMapping("/oblicz")
     public BigDecimal obliczRate(@RequestBody KredytRequest request) {
 
