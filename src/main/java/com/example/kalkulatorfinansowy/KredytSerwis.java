@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 @Service
 public class KredytSerwis {
 
-    public BigDecimal obliczRate(BigDecimal sum, BigDecimal LoanInterest, int months) {
+    public static BigDecimal calculateRate(BigDecimal sum, BigDecimal LoanInterest, int months) {
         if(sum == null){
             throw new RuntimeException("Podana kwota jest błędna");
         }
