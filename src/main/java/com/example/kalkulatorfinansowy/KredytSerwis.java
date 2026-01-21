@@ -7,15 +7,21 @@ import java.math.BigDecimal;
 public class KredytSerwis {
 
     public BigDecimal obliczRate(BigDecimal sum, BigDecimal LoanInterest, int months) {
-        if(sum == null || LoanInterest == null || months <= 0){
-            throw new RuntimeException("Podane dane są błędne");
+        if(sum == null){
+            throw new RuntimeException("Podana kwota jest błędna");
+        }
+        if(LoanInterest == null){
+            throw new RuntimeException("Podane oprocentowanie jest błędne");
+        }
+        if(months <= 0){
+            throw new RuntimeException("Podana ilość miesięcy jest błędna");
         }
         BigDecimal years = new BigDecimal(months).divide(new BigDecimal(12), 10, BigDecimal.ROUND_HALF_UP);
 
-        BigDecimal interest = sum
-                .multiply(LoanInterest)
-                .divide(new BigDecimal(100), 10, BigDecimal.ROUND_HALF_UP)
-                .multiply(years);
+            BigDecimal interest = sum
+                    .multiply(LoanInterest)
+                    .divide(new BigDecimal(100), 10, BigDecimal.ROUND_HALF_UP)
+                    .multiply(years);
 
         BigDecimal total = sum.add(interest);
 
