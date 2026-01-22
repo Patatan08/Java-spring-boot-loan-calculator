@@ -10,9 +10,9 @@ public class KredytController {
     @Autowired
     private KredytSerwis kredytSerwis;
     @PostMapping("/oblicz")
-    public BigDecimal obliczRate(@RequestBody KredytRequest request) {
+    public BigDecimal calculateRate (@RequestBody KredytRequest request) {
 
-        BigDecimal installment = KredytSerwis.calculateRate(
+        BigDecimal installment = kredytSerwis.calculateRate(
                 request.getAmount(),
                 request.getAnnualInterestRate(),
                 request.getMonths()
